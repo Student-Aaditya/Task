@@ -63,7 +63,7 @@ const superAdminController = {
             return res.status(404).json({ msg: "No admin data found" });
         }
 
-        return res.status(200).json({ msg: "Admin data", adminData: result });
+        return res.status(200).json(result );
     });
     },
     deleteAdmin:(req,res)=>{

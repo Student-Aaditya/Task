@@ -28,13 +28,18 @@ const loginController = {
 
             const token = jwt.sign(
                 { id: user.id, username: user.username, role: user.role },
-                process.env.JWT_SECRET,  
+                process.env.JWT_SECRET,
                 { expiresIn: "1h" }
             );
 
             return res.status(200).json({
                 msg: "Login successful",
-                token
+                token,
+                user: {
+                    id: user.id,
+                    username: user.username,
+                    role: user.role
+                }
             });
         });
     }
