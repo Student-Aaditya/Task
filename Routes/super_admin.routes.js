@@ -12,3 +12,4 @@ router.get("/api/admins", auth, allowRoles("super_admin"), superAdminController.
 router.delete("/api/admins/:id", auth, allowRoles("super_admin"), superAdminController.deleteAdmin);
 
 module.exports = router;
+
